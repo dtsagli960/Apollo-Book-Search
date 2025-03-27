@@ -1,5 +1,5 @@
 import express from 'express';
-import path from 'node:path';
+// import path from 'node:path';
 import db from './config/connection.js';
 import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
@@ -7,7 +7,7 @@ import { typeDefs } from './schemas/typeDefs.js';
 import { resolvers } from './schemas/resolvers.js';
 import { authenticateToken } from './services/auth.js'; 
 import cors from 'cors';
-import { fileURLToPath } from 'node:url';
+// import { fileURLToPath } from 'node:url';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -48,8 +48,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
 app.use(express.static('../client/dist'));
 
