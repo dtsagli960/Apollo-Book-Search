@@ -7,7 +7,13 @@ import { removeBookId } from '../utils/localStorage';
 
 const SavedBooks = () => {
   // Use the useQuery hook to fetch user data
-  const { loading, data } = useQuery(GET_ME);
+  const { loading, data } = useQuery(GET_ME, {
+    context: {
+      headers: {
+        authorization: Auth.loggedIn() ? `Bearer ${Auth.getToken()}` : '',
+      },
+    },
+  });
   const userData = data?.me || {
     username: '',
     email: '',
