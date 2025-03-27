@@ -21,7 +21,13 @@ const SavedBooks = () => {
   };
 
   // Use the useMutation hook for the REMOVE_BOOK mutation
-  const [removeBook] = useMutation(REMOVE_BOOK);
+  const [removeBook] = useMutation(REMOVE_BOOK, {
+    context: {
+      headers: {
+        authorization: Auth.loggedIn() ? `Bearer ${Auth.getToken()}` : '',
+      },
+    },
+  }));
 
   // Handle deleting a book
   const handleDeleteBook = async (bookId: string) => {
