@@ -26,8 +26,8 @@ const SavedBooks = () => {
       headers: {
         authorization: Auth.loggedIn() ? `Bearer ${Auth.getToken()}` : '',
       },
-    },
-  }));
+    }
+  });
 
   // Handle deleting a book
   const handleDeleteBook = async (bookId: string) => {
