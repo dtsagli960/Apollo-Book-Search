@@ -53,9 +53,9 @@ app.use(express.json());
 
 app.use(express.static('../client/dist'));
 
-app.get('*', (_req, res) => {
-  res.sendFile('../client/dist/index.html');
-});
+// app.get('*', (_req, res) => {
+//   res.sendFile('../client/dist/index.html');
+// });
 
 db.once('open', async () => {
   await startServer();
