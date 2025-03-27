@@ -7,6 +7,7 @@ import { typeDefs } from './schemas/typeDefs.js';
 import { resolvers } from './schemas/resolvers.js';
 import { authenticateToken } from './services/auth.js'; 
 import cors from 'cors';
+import { fileURLToPath } from 'node:url';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
